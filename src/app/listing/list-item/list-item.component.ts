@@ -8,7 +8,7 @@ import { CommonModule } from "@angular/common"
   styleUrls: ['./list-item.component.scss']
 })
 export class ListItemComponent implements OnInit {
-  @Input() private item: Application = new Application;
+  @Input()  item: Application = new Application;
 
   constructor() { }
 

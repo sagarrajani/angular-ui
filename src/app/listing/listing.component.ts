@@ -19,7 +19,7 @@ import {AnonymousSubscription} from "rxjs/Subscription";
   styleUrls: ['./listing.component.scss']
 })
 export class ListingComponent implements OnInit {
-  private items: any;
+   items: any;
   private sub: any;
   private selectedItem: any;
   private selectedItemId: string;
@@ -41,8 +41,8 @@ export class ListingComponent implements OnInit {
       this.sub.unsubscribe();
     });
     this.search=undefined;
-    this.items = this.data.fetchApplicationsList();
-    this.items.subscribe(result => {console.log(result.length)});
+    
+   
     this.data.getSearchTerm.subscribe((res) => {
       this.search = res; 
     });
@@ -81,7 +81,11 @@ export class ListingComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.items = this.data.fetchApplicationsList();
+    this.items.subscribe(result => {console.log(result.length)});
     this.items.subscribe(result=>{this.refreshData()});
+    console.log("after")
     this.items.subscribe(()=>this.showSpinner=false);
   }
 
@@ -94,10 +98,5 @@ export class ListingComponent implements OnInit {
 private subscribeToData(): void {
     this.timerSubscription = Observable.timer(60000).first().subscribe(() => this.refreshData());
 }
-public ngOnDestroy(): void {
-  if (this.items) {
-      this.items.unsubscribe();
-  }
 
-}
 }

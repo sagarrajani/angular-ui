@@ -11,7 +11,7 @@ import {ListingComponent} from '../app/listing/listing.component'
 })
 export class AppComponent {
   searchterm:string;
-  constructor(private router: Router,private data: DataService,private auth: Auth) { 
+  constructor(private router: Router,private data: DataService,public auth: Auth) { 
     this.data.load();
   }
 

@@ -7,7 +7,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
-  @Input() private data: any = {};
+  @Input()  data: any = {};
   private report_s3path;
   private statement_s3path;
   constructor(private sanitizer: DomSanitizer) {

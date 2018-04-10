@@ -14,7 +14,8 @@ export class LoginComponent {
   isValidInput = true;
   currentURL='';
   img = "";
-  constructor(private sanitizer: DomSanitizer,private auth: Auth, private router: Router) {
+  rememberme:any;
+  constructor(private sanitizer: DomSanitizer,public auth: Auth, private router: Router) {
     this.currentURL=window.location.hostname.split(".")[0];
     console.log(this.currentURL); 
     this.img = '/assets/'+this.currentURL+'.png';
