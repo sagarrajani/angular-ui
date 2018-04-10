@@ -11,7 +11,7 @@ declare var Auth0: any;
 export class Auth {
   // Configure Auth0
   auth0 = new Auth0(environment.auth);
-  private jwtHelper: JwtHelper = new JwtHelper();
+   jwtHelper: JwtHelper = new JwtHelper();
   isLoggedIn = false;
   isLoginFailed = false;
   isResetSuccess = null;
