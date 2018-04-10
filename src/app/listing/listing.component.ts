@@ -41,7 +41,7 @@ export class ListingComponent implements OnInit {
       this.sub.unsubscribe();
     });
     this.search=undefined;
-    
+    this.items = this.data.fetchApplicationsList();
    
     this.data.getSearchTerm.subscribe((res) => {
       this.search = res; 

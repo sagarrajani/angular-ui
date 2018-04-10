@@ -1,4 +1,4 @@
-import { HwVodPage } from './app.po';
+import { HwVodPage } from '../e2e/app.po';
 
 describe('hw-vod App', () => {
   let page: HwVodPage;
